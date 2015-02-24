@@ -1,0 +1,38 @@
+{
+  "name": "@stark/flatify",
+  "version": "0.0.7",
+  "description": "create flat objects of any structure.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "flatten",
+    "flat",
+    "object",
+    "csv",
+    "transform",
+    "convert"
+  ],
+  "author": "christoph.hagenbrock",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^2.1.0",
+    "starkjs-underscore": "0.0.1"
+  },
+  "scripts": {
+    "start": "node ./",
+    "test": "NODE_ENV=test istanbul test _mocha -- -R spec --recursive test",
+    "jstest": "NODE_ENV=test jscs .",
+    "lint": "jscs . --reporter console && eslint .",
+    "jscs-checkstyle": "jscs . --reporter checkstyle > build/checkstyle-jscs.xml",
+    "eslint-checkstyle": "eslint . --format checkstyle > build/checkstyle-eslint.xml",
+    "coverage-text": "istanbul report text",
+    "coverage-html": "istanbul report html",
+    "coverage-cobertura": "istanbul report cobertura",
+    "coverage-test": "npm run test --coverage && npm run coverage-html",
+    "coverage-check": "istanbul check-coverage --statement 100 --branch 100 --function 100 --lines 100",
+    "jscpd": "jscpd",
+    "browserify": "browserify index.js > browser.js"
+  }
+}
